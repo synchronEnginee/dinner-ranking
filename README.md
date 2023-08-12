@@ -37,6 +37,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 npx create-next-app@latest dinner-ranking --ts --tailwind --eslint --app --src-dir --import-alias --use-yarn
 
+### Jest 導入
+
+- npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+- npm i -D jest ts-jest @types/jest
+- jest.config.js を作成[公式参照](https://nextjs.org/docs/pages/building-your-application/optimizing/testing#setting-up-jest-with-the-rust-compiler)
+  →[参考になった記事](https://zenn.dev/miruoon_892/articles/e42e64fbb55137)
+  →[ts-jest で参考になった記事](https://qiita.com/ridai/items/d87d77e329644aad3086)
+
 ## Windows での開発のやり方
 
 1. Windows で WSL2 インストール
