@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  nextjs_sample:
+    build:
+      context: ./
+    container_name: nextjs_sample
+    tty: true
+    volumes:
+      - ./:/usr/app/front
+      - nextjs_sample_node_modules:/usr/app/front/node_modules
+    working_dir: /usr/app/front
+    # command: ["apk update" ,"apk add git", "/bin/sh -c 'while :; do sleep 10; done'"]
+    command: /bin/sh -c "while :; do sleep 10; done"
+    ports:
+      # viteのためポート5173
+      - "5173:5173"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+volumes:
+  nextjs_sample_node_modules:

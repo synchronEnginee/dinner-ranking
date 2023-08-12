@@ -1,0 +1,20 @@
+{
+  "name": "nextjs_sample",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "nextjs_sample",
+  "workspaceFolder": "/usr/app/front",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+        "burkeholland.simple-react-snippets",
+        "infeng.vscode-react-typescript",
+        "steoates.autoimport",
+        "eamodio.gitlens"
+      ]
+    }
+  }
+}
