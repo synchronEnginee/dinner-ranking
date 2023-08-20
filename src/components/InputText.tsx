@@ -1,3 +1,5 @@
+'use client'
+
 import { DetailedHTMLProps, FocusEventHandler, InputHTMLAttributes, useRef, useState } from 'react'
 import { type ChangeEventHandler } from 'react'
 
