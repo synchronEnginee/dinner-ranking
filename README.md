@@ -45,8 +45,33 @@ npx create-next-app@latest dinner-ranking --ts --tailwind --eslint --app --src-d
   →[参考になった記事](https://zenn.dev/miruoon_892/articles/e42e64fbb55137)
   →[ts-jest で参考になった記事](https://qiita.com/ridai/items/d87d77e329644aad3086)
 
+## storybook
+
+[導入の参考](https://panda-program.com/posts/nextjs-storybook-typescript-errors)
+
+起動コマンド
+npm run storybook
+
+![storybookの確認のスクショ](storybook-screenshot.png)
+
 ## Windows での開発のやり方
 
 1. Windows で WSL2 インストール
 2. wsl にて本 PJ ディレクトリを展開し、wsl のシェルを開いて code .で VSCode を WSL 繋いで起動
 3. ルートに.devcontainer.json ファイルを作成しているため、VSCode 拡張の DevContainer でコンテナ起動（要 DockerDesktop）
+
+## Radix UI導入
+
+一つのコンポーネントごとにパッケージが分かれており、必要なコンポーネントのみインストールする
+tailwindcssと組み合わせるには設定が必要であり、大変なので以下の「プラグインを導入すること
+npm i tailwindcss-radix
+tailwind.config.tsにプラグイン追加
+
+## tailwindのクラス参考
+
+https://tailwindcomponents.com/cheatsheet/
+
+## Next.jsとreactで考えるべき実装差異
+
+ServerComponentsかstateによりインタラクションするクライアントコンポーネントか
+https://nextjs.org/docs/getting-started/react-essentials#when-to-use-server-and-client-components
