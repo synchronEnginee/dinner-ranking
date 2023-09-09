@@ -73,5 +73,20 @@ https://tailwindcomponents.com/cheatsheet/
 
 ## Next.jsとreactで考えるべき実装差異
 
+approuter
+https://zenn.dev/yumemi_inc/articles/next-13-app-overview
+
 ServerComponentsかstateによりインタラクションするクライアントコンポーネントか
 https://nextjs.org/docs/getting-started/react-essentials#when-to-use-server-and-client-components
+
+## react-hook-form導入
+
+https://www.react-hook-form.com/get-started/
+
+フォーム内のフィールドは非制御コンポーネントが基本っぽい（制御コンポーネントとも合わせられる）
+バリデーションは基本HTML5バリデーションっぽい
+備忘
+https://developer.mozilla.org/ja/docs/Learn/Forms/Form_validation
+
+制御コンポーネントはuseControllerぽい
+https://www.react-hook-form.com/api/usecontroller/

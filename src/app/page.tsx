@@ -10,6 +10,9 @@ export default function Home() {
       <Link className='underline' href='/sample'>
         Sampleページへ
       </Link>
+      <Link className='underline' href='/recipe'>
+        レシピページへ
+      </Link>
     </main>
   )
 }
