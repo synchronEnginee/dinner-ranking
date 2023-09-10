@@ -5,7 +5,7 @@ import { useState } from 'react'
 import InputText from '../InputText'
 
 describe('InputText', () => {
-  test('制御コンポーネントInputText(tailwind)でアクセシビリティも実装されていること', async () => {
+  test('制御コンポーネントInputText(tailwind)でアクセシビリティ実装されており、未入力エラーが表示されること', async () => {
     // 制御コンポーネントでpropsでstateモック
     const hooks = renderHook(() => useState(''))
     const { rerender } = render(
@@ -23,6 +23,7 @@ describe('InputText', () => {
         maxLength={10}
         minLength={2}
         pattern={'^[0-9]*$'}
+        required={true}
         title={'test'}
         errorMessage={'test message'}
         heplerText='補助文章'
@@ -48,6 +49,7 @@ describe('InputText', () => {
         maxLength={10}
         minLength={2}
         pattern={'^[0-9]*$'}
+        required={true}
         title={'test'}
         errorMessage={'test message'}
         heplerText='補助文章'
@@ -69,6 +71,33 @@ describe('InputText', () => {
     expect(screen.getByDisplayValue('あ')).toBeInTheDocument()
     // ラベルにアクセス可能でinputのラベルとして設定されている
     expect(screen.getByLabelText('testLabel')).toBeInTheDocument()
+
+    // 消去して未入力状態に変更する
+    await userEvent.type(screen.getByRole('textbox'), `{backspace}`)
+
+    rerender(
+      <InputText
+        id={'testid'}
+        name={'root_test'}
+        value={hooks.result.current[0]}
+        onBlur={jest.fn()}
+        onChange={(event) =>
+          act(() => {
+            hooks.result.current[1](event.target.value)
+          })
+        }
+        label={'testLabel'}
+        maxLength={10}
+        minLength={2}
+        pattern={'^[0-9]*$'}
+        required={true}
+        title={'test'}
+        errorMessage={'test message'}
+        heplerText='補助文章'
+      />,
+    )
+    // 未入力エラーのメッセージが表示されること
+    expect(screen.getByText(`testLabelを入力してください`)).toBeInTheDocument()
   })
 
   test('type=stringかつinputMode=numericの時、onBlurで全角数字から半角数字へ変換されること', async () => {

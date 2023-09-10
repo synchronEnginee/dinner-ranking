@@ -60,14 +60,21 @@ const InputText = (props: Props) => {
   } = props
 
   const inputRef = useRef<HTMLInputElement>(null)
-  const [inputError, setInputError] = useState(!inputRef?.current?.checkValidity())
+  const [inputError, setInputError] = useState(false)
+  const [requiredError, setRequiredError] = useState(false)
 
   // onChangeの関数ラッパー
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    if (!inputRef?.current?.checkValidity()) {
-      setInputError(true)
+    // 必須入力エラーが最優先表示
+    if (inputRef?.current?.validity.valueMissing) {
+      setRequiredError(true)
     } else {
-      setInputError(false)
+      setRequiredError(false)
+      if (!inputRef?.current?.checkValidity()) {
+        setInputError(true)
+      } else {
+        setInputError(false)
+      }
     }
     if (onChange) onChange(event)
   }
@@ -120,7 +127,11 @@ const InputText = (props: Props) => {
         </p>
       ) : null}
       {/* エラーメッセージ */}
-      {inputError ? (
+      {requiredError ? (
+        <p id={`${id}-error`} className={errorCss}>
+          {`${label}を入力してください`}
+        </p>
+      ) : inputError ? (
         <p id={`${id}-error`} className={errorCss}>
           {errorMessage}
         </p>
