@@ -1,5 +1,6 @@
 'use client'
 import { useForm, Controller } from 'react-hook-form'
+import Textarea from '@/src/components/input/Textarea'
 import InputText from '@/src/components/InputText'
 
 type FormData = {
@@ -57,12 +58,11 @@ const NewRecipeForm = () => {
           id={'recipeName'}
           label={'レシピ名'}
         /> */}
+
         <div>
-          <label className='mb-2 block text-sm font-bold text-gray-700' htmlFor='explain'>
-            作り方
-          </label>
-          <textarea
+          <Textarea
             {...(register('explain'), { required: true })}
+            label={'作り方'}
             id={'explain'}
             rows={4}
             className='w-full'
