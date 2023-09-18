@@ -1,4 +1,4 @@
-import InputText from '@/src/components/InputText'
+import InputText from '@/src/components/input/InputText'
 import { Popover, PopoverTrigger, PopoverContent } from '@/src/components/popover/Popover'
 
 /**

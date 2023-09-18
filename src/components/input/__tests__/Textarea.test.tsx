@@ -6,7 +6,7 @@ import Textarea from '../Textarea'
 describe('Textarea Component', () => {
   it('renders with a label', () => {
     const label = 'Test Label'
-    const { container } = render(<Textarea label={label} id='test-textarea' />)
+    render(<Textarea label={label} id='test-textarea' />)
 
     // ラベルが表示されていることを確認
     expect(screen.getByText(label)).toBeInTheDocument()
@@ -25,7 +25,7 @@ describe('Textarea Component', () => {
   })
 
   it('renders without a label', () => {
-    const { container } = render(<Textarea id='test-textarea' />)
+    render(<Textarea id='test-textarea' />)
 
     // アクセシビリティを確認
     const textarea = screen.getByRole('textbox')
@@ -33,7 +33,7 @@ describe('Textarea Component', () => {
   })
 
   it('handles input correctly', async () => {
-    const { container } = render(<Textarea id='test-textarea' />)
+    render(<Textarea id='test-textarea' />)
     const textarea: HTMLTextAreaElement = screen.getByRole('textbox')
 
     // テキストを入力

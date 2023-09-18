@@ -1,7 +1,7 @@
 'use client'
 import { useForm, Controller } from 'react-hook-form'
+import InputText from '@/src/components/input/InputText'
 import Textarea from '@/src/components/input/Textarea'
-import InputText from '@/src/components/InputText'
 
 type FormData = {
   recipeName: string
