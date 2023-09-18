@@ -92,3 +92,7 @@ https://developer.mozilla.org/ja/docs/Learn/Forms/Form_validation
 
 制御コンポーネントはuseControllerぽい
 https://www.react-hook-form.com/api/usecontroller/
+
+## tailwind \* radixuiのスタイル参考
+
+https://codesandbox.io/s/ecklf-tailwindcss-radix-demo-51pm1?file=/components/select.tsx:916-966
