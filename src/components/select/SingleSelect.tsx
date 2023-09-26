@@ -1,14 +1,20 @@
 import { CheckIcon } from '@radix-ui/react-icons'
 import * as Select from '@radix-ui/react-select'
 
+type Props = {
+  selectItems: Array<{ value: string; label: string }>
+  placeholder?: string
+  ariaLabel?: string
+}
 /**
- * TODO:後でリファクタリング
- * TOFIX:選択肢が現在はダミーの固定値になっているので、コンポーネントとしてprops受け取るようにする
+ * propsで選択肢を渡す
+ * 一つのみ選択可能
+ * 選択するとチェックマークがつく
  */
-const SingleSelect = () => (
+const SingleSelect = (props: Props) => (
   <Select.Root>
-    <Select.Trigger>
-      <Select.Value />
+    <Select.Trigger aria-label={props.ariaLabel}>
+      <Select.Value placeholder={props?.placeholder} />
       <Select.Icon />
     </Select.Trigger>
 
@@ -16,27 +22,19 @@ const SingleSelect = () => (
       <Select.Content>
         <Select.ScrollUpButton />
         <Select.Viewport className='rounded-lg bg-white p-2 shadow-lg dark:bg-gray-800'>
-          <Select.Item
-            value={'aaa'}
-            className='relative flex h-8 select-none items-center px-4 leading-none'
-          >
-            <Select.ItemText>aaa</Select.ItemText>
-            <Select.ItemIndicator className='absolute left-0 inline-flex items-center'>
-              <CheckIcon />
-            </Select.ItemIndicator>
-          </Select.Item>
-
           <Select.Group>
-            <Select.Label />
-            <Select.Item
-              value={'bbb'}
-              className='relative flex h-8 select-none items-center px-4 leading-none'
-            >
-              <Select.ItemText>bbb</Select.ItemText>
-              <Select.ItemIndicator className='absolute left-0 inline-flex items-center'>
-                <CheckIcon />
-              </Select.ItemIndicator>
-            </Select.Item>
+            {props.selectItems.map((item) => (
+              <Select.Item
+                value={item.value}
+                className='relative flex h-8 select-none items-center px-4 leading-none'
+                key={item.value}
+              >
+                <Select.ItemText>{item.label}</Select.ItemText>
+                <Select.ItemIndicator className='absolute left-0 inline-flex items-center'>
+                  <CheckIcon />
+                </Select.ItemIndicator>
+              </Select.Item>
+            ))}
           </Select.Group>
 
           <Select.Separator />

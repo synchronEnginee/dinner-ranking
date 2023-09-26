@@ -28,10 +28,10 @@ export default meta
 
 export const Default = () => (
   <SingleSelect
-  // label='Label Text'
-  // id='SingleSelect-1'
-  // placeholder='Type something...'
-  // rows={4}
-  // className='w-full rounded border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring'
+    selectItems={[
+      { label: '選択肢1', value: '値1' },
+      { label: '選択肢2', value: '値2' },
+    ]}
+    placeholder='あああ'
   />
 )
