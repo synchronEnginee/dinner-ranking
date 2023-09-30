@@ -96,3 +96,20 @@ https://www.react-hook-form.com/api/usecontroller/
 ## tailwind \* radixuiのスタイル参考
 
 https://codesandbox.io/s/ecklf-tailwindcss-radix-demo-51pm1?file=/components/select.tsx:916-966
+
+## CMS(Content Management System)の採用調査
+
+最も有名なのはWordpressだが、デザインや機能に自由度がない。
+
+Headless CMSの採用が良さそう
+https://wk-partners.co.jp/homepage/blog/hpseisaku/htmlcss/headless-cms/
+
+DBとバックエンドを自前で用意するとランニングコストは免れないので、CMS使って永続データは任せるのが財布に優しそう
+
+[prismic.ioが無料枠あって良さそう](https://prismic.io/)
+[prismic.ioを利用した採用例]https://zenn.dev/mogami/articles/prismic_jamstack
+
+prismicはフロント側でprismicクライアントを生成し、APIコールするっぽい
+
+[vercel公式のprismic採用例](https://vercel.com/templates/next.js/prismic-blog)
+[vercel×prismic](https://zenn.dev/k41531/articles/d05ce3527f594d)
