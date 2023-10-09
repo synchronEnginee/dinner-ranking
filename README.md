@@ -110,6 +110,14 @@ DBとバックエンドを自前で用意するとランニングコストは免
 [prismic.ioを利用した採用例]https://zenn.dev/mogami/articles/prismic_jamstack
 
 prismicはフロント側でprismicクライアントを生成し、APIコールするっぽい
+sliceというテンプレート化(コンテンツデータの型のようなものも作成可能)してコンポーネントを扱う機能がある
 
 [vercel公式のprismic採用例](https://vercel.com/templates/next.js/prismic-blog)
 [vercel×prismic](https://zenn.dev/k41531/articles/d05ce3527f594d)
+[nextjs×prismic](https://prismic.io/docs/nextjs)
+[nextjs×prismicのセットアップ](https://prismic.io/docs/setup-nextjs)
+
+prisimicのセットアップする際にprettier-plugin-eslitがmjsであるエラーが出てしまうので、仕方なく削除してもう一度インストールした
+
+prismicio-types.d.tsはprismicのGUIで定義したコンテンツの型（自動生成される）
+作成したcustomtypesディレクトリも自動生成される

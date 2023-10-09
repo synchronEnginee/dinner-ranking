@@ -1,0 +1,50 @@
+{
+  "id": "recipe",
+  "label": "recipe",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "category": {
+        "type": "Select",
+        "config": {
+          "label": "category",
+          "placeholder": "料理のカテゴリーを一つ選択",
+          "options": ["メインディッシュ", "サイド", "スープ"]
+        }
+      },
+      "mainFood": {
+        "type": "Select",
+        "config": {
+          "label": "mainFood",
+          "placeholder": "メイン食材を一つ選択",
+          "options": ["肉", "魚", "卵", "野菜", "米", "パスタ", "パン"]
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

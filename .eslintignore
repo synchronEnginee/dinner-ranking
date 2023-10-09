@@ -1,2 +1,4 @@
 .eslintrc.js
 *.config.js
+**/src/app/api/*
+**/src/slices/*
