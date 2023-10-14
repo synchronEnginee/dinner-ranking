@@ -81,6 +81,12 @@ https://zenn.dev/yumemi_inc/articles/next-13-app-overview
 ServerComponentsかstateによりインタラクションするクライアントコンポーネントか
 https://nextjs.org/docs/getting-started/react-essentials#when-to-use-server-and-client-components
 
+next13より前はgetStaticPropsやgetStaticPathsで、ビルド時にバックエンドから動的データを取得して生成していたが、
+approuterになってservercomponentsとなったことでgetStaticPropsとgetStaticPaths廃止された。
+代わりにgenerateStaticParamsがある
+
+(外部ドメインのurlから画像を取得したい場合)[https://chaika.hatenablog.com/entry/2021/07/20/083000]
+
 ## react-hook-form導入
 
 https://www.react-hook-form.com/get-started/
