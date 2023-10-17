@@ -12,7 +12,8 @@
     @apply min-h-screen;
     @apply flex-col;
     @apply items-center;
-    @apply p-24;
+    /* paddingが入っているとレスポンシブしにくいので消す */
+    /* @apply p-24; */
   }
 }
 

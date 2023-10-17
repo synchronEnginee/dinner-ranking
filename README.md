@@ -72,6 +72,8 @@ tailwind.config.tsにプラグイン追加
 ## tailwindのクラス参考
 
 https://tailwindcomponents.com/cheatsheet/
+絶対値のpxを使いたい場合はw-[800px]などで指定
+ファイル内の文字列を見てクラス抽出を行いバンドルする（クラス名で使用されるかは関係ない）
 
 ## Next.jsとreactで考えるべき実装差異
 

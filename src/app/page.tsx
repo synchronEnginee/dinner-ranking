@@ -11,7 +11,10 @@ export default function Home() {
         Sampleページへ
       </Link>
       <Link className='underline' href='/recipe'>
-        レシピページへ
+        レシピ投稿ページへ
+      </Link>
+      <Link className='underline' href='/recipe/ranking'>
+        ランキングページへ
       </Link>
     </main>
   )
