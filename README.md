@@ -138,31 +138,15 @@ https://prismic.io/docs/api#selective-fetching-and-the-graphql-api
 以下のurlでplaygroundみたいなものが出てくる
 https://dinner-ranking.prismic.io/graphql
 
-全レシピ取得のqueryメモ
+graphql-codegenインストール
+https://the-guild.dev/graphql/codegen/docs/getting-started/installation
+
+prismicioのschema.gql参照するには、customFetchと公式提供のライブラリが必要
 
 ```
-query allRecipes{
-  allRecipes{
-    pageInfo{
-      hasNextPage
-      hasPreviousPage
-    }
-    edges {
-      node{
-        image
-        category
-        description
-        _meta{
-          id
-          uid
-          type
-          tags
-          firstPublicationDate
-          lastPublicationDate
-        }
-      }
-    }
-    totalCount
-  }
-}
+  // 普通じゃschemaを提供していないので、customFetchで取得する
+  schema: { 'https://dinner-ranking.prismic.io/graphql': { customFetch: 'codegen-prismic-fetch' } },
 ```
+
+graphql-clientは使い慣れているgraphql-requestで行く予定（軽いので）
+使い慣れているtanstack-queryでキャッシュする予定

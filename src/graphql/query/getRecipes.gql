@@ -1,0 +1,24 @@
+query allRecipes {
+  allRecipes {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    edges {
+      node {
+        image
+        category
+        description
+        _meta {
+          id
+          uid
+          type
+          tags
+          firstPublicationDate
+          lastPublicationDate
+        }
+      }
+    }
+    totalCount
+  }
+}

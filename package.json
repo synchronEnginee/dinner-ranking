@@ -13,7 +13,8 @@
     "test": "jest --all",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@prismicio/client": "^7.2.0",
@@ -38,6 +39,9 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/client-preset": "4.1.0",
+    "@graphql-codegen/introspection": "4.0.0",
     "@slicemachine/adapter-next": "^0.3.19",
     "@storybook/addon-essentials": "^7.2.3",
     "@storybook/addon-interactions": "^7.2.3",
@@ -53,6 +57,7 @@
     "@types/jest": "^29.5.3",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
+    "codegen-prismic-fetch": "^1.0.5",
     "eslint-config-prettier": "^9.0.0",
     "jest": "^29.6.2",
     "jest-environment-jsdom": "^29.6.2",
