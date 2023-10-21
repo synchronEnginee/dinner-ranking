@@ -129,3 +129,40 @@ prisimicのセットアップする際にprettier-plugin-eslitがmjsであるエ
 
 prismicio-types.d.tsはprismicのGUIで定義したコンテンツの型（自動生成される）
 作成したcustomtypesディレクトリも自動生成される
+
+## prismicioをgraphqlで取得
+
+graphqlでも取得できそうなので、置き換える
+https://prismic.io/docs/api#selective-fetching-and-the-graphql-api
+
+以下のurlでplaygroundみたいなものが出てくる
+https://dinner-ranking.prismic.io/graphql
+
+全レシピ取得のqueryメモ
+
+```
+query allRecipes{
+  allRecipes{
+    pageInfo{
+      hasNextPage
+      hasPreviousPage
+    }
+    edges {
+      node{
+        image
+        category
+        description
+        _meta{
+          id
+          uid
+          type
+          tags
+          firstPublicationDate
+          lastPublicationDate
+        }
+      }
+    }
+    totalCount
+  }
+}
+```
