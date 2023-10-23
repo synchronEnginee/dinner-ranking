@@ -9,6 +9,17 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
  */
 interface RecipeDocumentData {
   /**
+   * name field in *recipe*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 料理名
+   * - **API ID Path**: recipe.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField
+
+  /**
    * image field in *recipe*
    *
    * - **Field Type**: Image
@@ -35,11 +46,11 @@ interface RecipeDocumentData {
    *
    * - **Field Type**: Select
    * - **Placeholder**: メイン食材を一つ選択
-   * - **API ID Path**: recipe.mainFood
+   * - **API ID Path**: recipe.mainfood
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  mainFood: prismic.SelectField<'肉' | '魚' | '卵' | '野菜' | '米' | 'パスタ' | 'パン'>
+  mainfood: prismic.SelectField<'肉' | '魚' | '野菜' | '卵' | '米' | 'パン' | '麺'>
 
   /**
    * description field in *recipe*

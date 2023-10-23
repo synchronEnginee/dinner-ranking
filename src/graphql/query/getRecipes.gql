@@ -6,6 +6,8 @@ query allRecipes {
     }
     edges {
       node {
+        name
+        mainfood
         image
         category
         description

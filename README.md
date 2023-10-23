@@ -132,6 +132,12 @@ prismicio-types.d.tsはprismicのGUIで定義したコンテンツの型（自�
 
 ## prismicioをgraphqlで取得
 
+custom-typesを新しく作成したり、更新する際の注意
+prettier-plugin-tailwindcssがネイティブESMでsliceをいじる際にエラーが出てしまう
+回避策として一旦npm remove prettier-plugin-tailwindcssをしてslicemachineで修正後に再インストール
+prettierrcのpluginのprettier-plugin-tailwindcssも一旦消すこと
+require() of ES Module /usr/app/front/node_modules/prettier-plugin-tailwindcss/
+
 graphqlでも取得できそうなので、置き換える
 https://prismic.io/docs/api#selective-fetching-and-the-graphql-api
 
@@ -150,3 +156,14 @@ prismicioのschema.gql参照するには、customFetchと公式提供のライ�
 
 graphql-clientは使い慣れているgraphql-requestで行く予定（軽いので）
 使い慣れているtanstack-queryでキャッシュする予定
+
+[custom Fetchの設定参考](https://zenn.dev/link/comments/07b77a5b694405)
+
+[codegenの設定参考](https://zenn.dev/layerx/articles/028cb518cffd61#client-preset-%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E8%A8%AD%E5%AE%9A%E3%81%BE%E3%81%A8%E3%82%81)
+
+[graphql-request使った公式のgraphql参考](https://prismic.io/docs/graphql-technical-reference)
+[公式には載っていないが、設定のapiから分かるPrismic-Refというgraphql-schemaのバージョン指定をheadersに入れる必要あり](https://dinner-ranking.prismic.io/api/v2)
+
+Module not found: Can't resolve 'encoding' in '/usr/app/front/node_modules/node-fetch/lib'
+→encodingをインストールすれば解決
+

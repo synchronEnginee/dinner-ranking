@@ -12,6 +12,13 @@
         },
         "type": "UID"
       },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "name",
+          "placeholder": "料理名"
+        }
+      },
       "image": {
         "type": "Image",
         "config": {
@@ -28,12 +35,12 @@
           "options": ["メインディッシュ", "サイド", "スープ"]
         }
       },
-      "mainFood": {
+      "mainfood": {
         "type": "Select",
         "config": {
           "label": "mainFood",
           "placeholder": "メイン食材を一つ選択",
-          "options": ["肉", "魚", "卵", "野菜", "米", "パスタ", "パン"]
+          "options": ["肉", "魚", "野菜", "卵", "米", "パン", "麺"]
         }
       },
       "description": {
