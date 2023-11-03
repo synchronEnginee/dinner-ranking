@@ -167,3 +167,14 @@ graphql-clientは使い慣れているgraphql-requestで行く予定（軽いの
 Module not found: Can't resolve 'encoding' in '/usr/app/front/node_modules/node-fetch/lib'
 →encodingをインストールすれば解決
 
+## nextjsとtanstack-queryを併用する
+
+providersというディレクトリとライブラリの追加インストールが必要（通常のreactのようにapp.tsxで囲うような簡単な使い方はできない）
+https://qiita.com/75ks/items/d5d5bfe21a3e8bb964ae
+
+npm install @tanstack/react-query-next-experimental
+
+https://tanstack.com/query/v4/docs/react/examples/react/nextjs
+
+[nextjs13とtanstack-query](https://blog.logrocket.com/using-tanstack-query-next-js/)
+↑によるとnextjsプラグインを使うことで、最初の一回のフェッチはサーバー側で実行して、キャッシュをクライアントへ渡してくれるみたい

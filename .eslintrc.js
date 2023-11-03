@@ -4,6 +4,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended', // (A)
     'plugin:@typescript-eslint/recommended-requiring-type-checking', // (B)
+    // react-queryのプラグイン
+    'plugin:@tanstack/eslint-plugin-query/recommended',
     'next/core-web-vitals',
     'prettier',
   ],
@@ -14,7 +16,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', '@tanstack/query'],
   rules: {
     'import/order': [
       'error',
@@ -51,5 +53,7 @@ module.exports = {
         'newlines-between': 'never', // グループごとに空行を挿入するか
       },
     ],
+    '@tanstack/query/exhaustive-deps': 'error',
+    '@tanstack/query/stable-query-client': 'error',
   },
 }

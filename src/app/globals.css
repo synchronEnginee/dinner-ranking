@@ -7,6 +7,9 @@
     @apply text-5xl;
     @apply my-16;
   }
+  h3 {
+    @apply text-3xl;
+  }
   main {
     @apply flex;
     @apply min-h-screen;
