@@ -178,3 +178,12 @@ https://tanstack.com/query/v4/docs/react/examples/react/nextjs
 
 [nextjs13とtanstack-query](https://blog.logrocket.com/using-tanstack-query-next-js/)
 ↑によるとnextjsプラグインを使うことで、最初の一回のフェッチはサーバー側で実行して、キャッシュをクライアントへ渡してくれるみたい
+
+APIのtoken(https://dinner-ranking.prismic.io/settings/apps/)
+tokenはBearerで仕込む(https://prismic.io/docs/integration#add-an-authorization-token)
+accessTokenはprismicClientのaccessTokenにも設定しないとinvalid access token になってしまうので注意
+accessToken: process.env.PRISMIC_ACCESS_TOKEN
+
+TypeError [ERR_INVALID_STATE]: Invalid state: ReadableStream is already closedが出た場合
+https://github.com/vercel/next.js/discussions/55027
+→[開発サーバーでキャッシュリロード行うと発生するっぽい](https://github.com/vercel/next.js/discussions/55027#discussioncomment-6929427)

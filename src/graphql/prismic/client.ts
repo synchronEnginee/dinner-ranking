@@ -4,7 +4,8 @@ import { GraphQLClient } from 'graphql-request'
 // The rest of the file...
 const prismicClient = prismic.createClient('dinner-ranking', {
   // If your repository is private, add an access token
-  accessToken: '',
+  // accessTokenはここにも設定しないとinvalid access token になってしまいます
+  accessToken: process.env.PRISMIC_ACCESS_TOKEN,
 
   // This defines how you will structure URL paths in your project.
   // Update the types to match the custom types in your project, and edit
@@ -33,7 +34,13 @@ const client = new GraphQLClient(prismic.getGraphQLEndpoint('dinner-ranking'), {
   ) => Promise<Response>,
   method: 'get',
   // prismicで生成したapischemaのバージョン((https://dinner-ranking.prismic.io/api/v2))
-  headers: { 'Prismic-Ref': 'ZTZ_BhIAACMA0hUI' },
+  // APIのtoken(https://dinner-ranking.prismic.io/settings/apps/)
+  // tokenはBearerで仕込む(https://prismic.io/docs/integration#add-an-authorization-token)
+  headers: {
+    'Prismic-Ref': process.env.PRISMIC_REF ?? '',
+    Authorization: `Bearer ${process.env.PRISMIC_ACCESS_TOKEN}`,
+  },
 })
+console.log(client)
 
 export default client

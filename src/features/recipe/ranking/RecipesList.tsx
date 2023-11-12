@@ -1,4 +1,3 @@
-'use client'
 import Image from 'next/image'
 import useGetRecipesQuery from '@/src/features/recipe/ranking/hooks/useGetRecipesQuery'
 // import { createClient } from '../../../prismicio'
