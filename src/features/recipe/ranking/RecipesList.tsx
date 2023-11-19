@@ -1,30 +1,32 @@
 import Image from 'next/image'
-import useGetRecipesQuery from '@/src/features/recipe/ranking/hooks/useGetRecipesQuery'
+import Tag from '@/src/components/label/Tag'
+// import useGetRecipesQuery from '@/src/features/recipe/ranking/hooks/useGetRecipesQuery'
+import { getRecipes } from './api'
+import CategoryTag from './components/CategoryTag'
 // import { createClient } from '../../../prismicio'
 
-const RecipesList = () => {
+const RecipesList = async () => {
   // const client = createClient()
 
   // prismicioからrecipe型のデータを取得
-  // const recipes = await client.getAllByType('recipe')
-  // const recipes = await getRecipes()
-  const fetchResult = useGetRecipesQuery()
-  const recipes = fetchResult.data
+  const recipes = await getRecipes()
+  // const fetchResult = useGetRecipesQuery()
+  // const recipes = fetchResult.data
   if (!recipes) return null
 
   const lastRecipeNumber = recipes.allRecipes.totalCount - 1
   const isNotNullRecipes = recipes.allRecipes.edges ?? []
 
   return (
-    <div className='mx-auto w-full p-8 sm:w-[800px]'>
+    <div className='mx-auto w-full bg-gray-50 p-8 sm:w-[800px]'>
       {/* TOFIX:ランキング表示のコンポーネントはfeatures配下へ移動する */}
       {isNotNullRecipes.map((recipe, i) => {
         const n = recipe?.node
         return n ? (
           <div key={n._meta.id} className='my-8'>
             <h3 key={n._meta.id} className='font-bold'>{`${n.name}`}</h3>
-            <div key={n._meta.id}>{`カテゴリー：${n.category}`}</div>
-            <div key={n._meta.id}>{`メイン食材：${n.mainfood}`}</div>
+            <CategoryTag label={`${n.category}`} key={n._meta.id} />
+            <Tag key={n._meta.id} label={`${n.mainfood}`} />
 
             <Image
               key={n._meta.id}
@@ -35,7 +37,7 @@ const RecipesList = () => {
               width='800'
               height='600'
             />
-            <div key={n._meta.id}>{`説明：`}</div>
+            {/* <div key={n._meta.id}>{`説明：`}</div> */}
             {
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
               n.description.map((v: string, i: number) => (

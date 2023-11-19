@@ -69,11 +69,15 @@ tailwindcssと組み合わせるには設定が必要であり、大変なので
 npm i tailwindcss-radix
 tailwind.config.tsにプラグイン追加
 
-## tailwindのクラス参考
+## tailwindの参考
 
 https://tailwindcomponents.com/cheatsheet/
 絶対値のpxを使いたい場合はw-[800px]などで指定
 ファイル内の文字列を見てクラス抽出を行いバンドルする（クラス名で使用されるかは関係ない）
+
+tailwindは重複したクラスの上書きがうまくできない問題がある（classNameの後記載勝ちにならない）
+→https://zenn.dev/uttk/articles/39c3b78cab3e06
+[tailwind-mergeを使うとよい](https://github.com/dcastil/tailwind-merge)
 
 ## Next.jsとreactで考えるべき実装差異
 

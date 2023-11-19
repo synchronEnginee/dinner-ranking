@@ -18,7 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='ja'>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <div className='mx-auto min-h-screen w-full bg-white sm:w-3/4'>
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   )

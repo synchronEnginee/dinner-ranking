@@ -1,4 +1,3 @@
-'use client'
 import { Suspense } from 'react'
 import RecipesList from '@/src/features/recipe/ranking/RecipesList'
 // import { createClient } from '../../../prismicio'
